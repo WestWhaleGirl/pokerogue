@@ -2781,7 +2781,7 @@ export class ObtainStatusEffectPhase extends PokemonPhase {
   start() {
     const pokemon = this.getPokemon();
     if (!pokemon.status) {
-      if (pokemon.trySetStatus(this.statusEffect)) {
+      if (pokemon.trySetStatus(this.statusEffect, false, 0, true)) {
         if (this.cureTurn)
           pokemon.status.cureTurn = this.cureTurn;
         pokemon.updateInfo(true);

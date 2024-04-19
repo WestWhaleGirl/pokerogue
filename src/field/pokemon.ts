@@ -1787,10 +1787,10 @@ export default abstract class Pokemon extends Phaser.GameObjects.Container {
     return true;
   }
 
-  trySetStatus(effect: StatusEffect, asPhase: boolean = false, cureTurn: integer = 0, sourceText: string = null): boolean {
-    if (!this.canSetStatus(effect, asPhase))
-      return false;
+  trySetStatus(effect: StatusEffect, asPhase: boolean = false, cureTurn: integer = 0, force: boolean = false, sourceText: string = null): boolean {
 
+    if (!force && !this.canSetStatus(effect, asPhase))
+      return false;
     if (asPhase) {
       this.scene.unshiftPhase(new ObtainStatusEffectPhase(this.scene, this.getBattlerIndex(), effect, cureTurn, sourceText));
       return true;

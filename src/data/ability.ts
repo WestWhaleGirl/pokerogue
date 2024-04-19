@@ -2842,7 +2842,7 @@ export function initAbilities() {
       .attr(UnswappableAbilityAbAttr)
       .attr(UnsuppressableAbilityAbAttr)
       .attr(NoFusionAbilityAbAttr),
-    new Ability(Abilities.CORROSION, "Corrosion (N)", "The Pokémon can poison the target even if it's a Steel or Poison type.", 7),
+    new Ability(Abilities.CORROSION, "Corrosion", "The Pokémon can poison the target even if it's a Steel or Poison type.", 7),
     new Ability(Abilities.COMATOSE, "Comatose (N)", "It's always drowsing and will never wake up. It can attack without waking up.", 7)
       .attr(UncopiableAbilityAbAttr)
       .attr(UnswappableAbilityAbAttr)

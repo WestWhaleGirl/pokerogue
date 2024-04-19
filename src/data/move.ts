@@ -955,7 +955,9 @@ export class StatusEffectAttr extends MoveEffectAttr {
           return false;
       }
       if (!pokemon.status || (pokemon.status.effect === this.effect && move.chance < 0))
-        return pokemon.trySetStatus(this.effect, true, this.cureTurn);
+        if (user.getAbility().id === Abilities.CORROSION && (move.id === Moves.TOXIC || move.id === Moves.POISON_GAS))
+          return pokemon.trySetStatus(this.effect, true, this.cureTurn, true);
+        return pokemon.trySetStatus(this.effect, true, this.cureTurn, false);
     }
     return false;
   }
